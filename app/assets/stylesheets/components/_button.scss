@@ -1,0 +1,79 @@
+.btn-yellow {
+  color: black;
+  padding: 15px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #ffd700;
+  transition: all 0.7s ease;
+  justify-content: center;
+}
+
+.btn-yellow:hover {
+  color: #ffd700;
+  background: black;
+}
+
+.btn-medium {
+  color: #02566C;
+  border: 1px solid #02566C;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.7;
+}
+
+.btn-medium:hover {
+  opacity: 1;
+  color: #0F3C42;
+}
+
+.btn-treehouse {
+  color: white;
+  padding: 15px 25px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: #0F3C42;
+  transition: all 0.3s ease;
+
+}
+
+.btn-treehouse:hover {
+  opacity: 1;
+  background: #02566C;
+  color: #F0F465;
+}
+
+
+.btn-lobster {
+  border: 1px #B6244F solid;
+  border-radius: 3px;
+  padding: 15px;
+/*  background-color: #F9B6BF;*/
+  /* color: #4F759B; */
+  color: white;
+  transition: all 0.5s ease;
+  background: linear-gradient(#B6244F, #F9B6BF);
+}
+
+.btn-lobster:hover {
+  color: white;
+  background: linear-gradient(#F9B6BF, #B6244F);
+}
+
+.btn-neon {
+  padding: 15px;
+  background: black;
+  color: #F0F465;
+  border-radius: 5px;
+  border: 2px #F0F465 solid;
+  box-shadow: 0 0 17px red;
+  transition: background 0.5s ease;
+}
+
+.btn-neon:hover {
+  box-shadow: 0 0 27px #0F3C42;
+  border: 2px red solid;
+  background: #F0F465;
+  color: #0F3C42;
+  font-weight: bold;
+}
