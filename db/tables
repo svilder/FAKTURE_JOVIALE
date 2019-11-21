@@ -1,0 +1,68 @@
+tables
+
+Company
+
+id
+name
+adress_line_1
+adress_line_2
+postal_code
+city
+country
+SIRET
+
+rails g model Company name:string address_line_1:string address_line_2:string postal_code:string city:string country:string SIRET:integer
+
+
+Item
+
+id
+description
+quantity
+price
+
+rails g model Item description:string quantity:integer price:integer
+
+Bank-Account
+
+id
+description
+IBAN
+SWIFT
+
+rails g model BankAccount description:string iban:integer swift:integer
+
+Client
+
+id
+name
+fullname
+company_id
+email
+tel
+
+rails g model Client first_name:string last_name:string email:string phone:string company:references
+
+Bill
+
+id
+date_creation
+date_due_paiement:datetime
+client_id
+bill_title
+
+rails g model Bill title:string date_creation:datetime date_due_paiement:datetime client:references
+
+Bill-making
+
+id
+validated : true/false
+user_id
+bill_id
+item_id
+bank_account_id
+total-price
+sent : true/false
+paid : true/false
+
+rails g model BillMaking validated:boolean sent:boolean paid:boolean total_price:integer user:references bill:references item:references bank_account:references
