@@ -1,0 +1,30 @@
+<div class="main-layout">
+  <div class="navbar-actions">
+    <div class="action">
+      <%= link_to dashboard_path do %>
+        <i class="fas fa-home"></i>
+      <% end %>
+    </div>
+    <div class="action">
+      <%= link_to "" do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+    <div class="action">
+      <%= link_to "" do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+    <div class="action">
+      <%= link_to "" do %>
+        <i class="fas fa-plus"></i>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="dashboard">
+    <%= yield %>
+  </div>
+
+  <div class="navbar-end"></div>
+</div>
