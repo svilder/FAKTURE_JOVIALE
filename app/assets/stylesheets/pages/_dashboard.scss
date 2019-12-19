@@ -1,0 +1,26 @@
+.main-layout {
+  display: flex;
+  justify-content: flex-end;
+  height: 100vh;
+  background-color: #af2258;
+}
+
+.navbar-actions {
+  margin-top: 30px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dashboard {
+  flex-grow: 1;
+}
+.dashboard-container {
+  background-color: #bbbbbb;
+  height: 100vh;
+}
+
+.navbar-end {
+  width: 100px;
+}
