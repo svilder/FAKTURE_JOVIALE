@@ -10,11 +10,43 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+      <%#= render 'shared/vertical-navbar' %>
+
+    <div class="main-layout">
     <% unless action_name == "home" %>
-      <%= render 'shared/vertical-navbar' %>
+      <div class="navbar-actions">
+        <div class="action">
+          <%= link_to dashboard_path do %>
+            <i class="fas fa-home"></i>
+          <% end %>
+        </div>
+        <div class="action">
+          <%= link_to "" do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        </div>
+        <div class="action">
+          <%= link_to "" do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        </div>
+        <div class="action">
+          <%= link_to "" do %>
+            <i class="fas fa-plus"></i>
+          <% end %>
+        </div>
+      </div>
     <% end %>
-    <%= render 'shared/flashes' %>
-    <%= yield %>
+
+      <div class="dashboard">
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+      </div>
+      <% unless action_name == "home" %>
+        <div class="navbar-end"></div>
+      <% end %>
+    </div>
+
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
   </body>

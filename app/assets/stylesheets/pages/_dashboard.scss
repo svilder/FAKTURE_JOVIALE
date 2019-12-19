@@ -2,6 +2,7 @@
   display: flex;
   justify-content: flex-end;
   height: 100vh;
+  background-color: #af2258;
 }
 
 .navbar-actions {
@@ -14,7 +15,10 @@
 
 .dashboard {
   flex-grow: 1;
+}
+.dashboard-container {
   background-color: #bbbbbb;
+  height: 100vh;
 }
 
 .navbar-end {
