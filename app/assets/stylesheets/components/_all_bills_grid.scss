@@ -1,0 +1,25 @@
+.all-bills {
+  display: flex;
+  justify-content: center;
+  // max-width: 970px;
+  padding: 20px;
+}
+
+.colum {
+  display: grid;
+  grid-template-columns: 8fr;
+  // height: 100px;
+  background-color: #ffd700;
+  grid-gap: 10px;
+  border: solid 2px;
+  padding: 10px;
+}
+
+.rowy {
+  // background-color: orange;
+  // border: solid 2px;
+}
+
+.titly {
+  border-bottom: solid 2px;
+}
