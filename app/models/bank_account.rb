@@ -1,2 +1,3 @@
 class BankAccount < ApplicationRecord
+
 end
