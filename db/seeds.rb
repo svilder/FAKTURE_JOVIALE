@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Bill.destroy_all
+Client.destroy_all
+Companie.destroy_all
+Company.destroy_all
+Item.destroy_all
+BankAccount.destroy_all
+
+user = User.new(email:"yo@yo.com", password:"yoyoyo",)
+bill = Bill.new(title:"Facture Wagon automne", validated:false, paid:false, sent:false, user_id:1, client_id:1)
+companie = Companie.new(name:"Ubisoft", city:"Montreal")
