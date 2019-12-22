@@ -1,3 +1,4 @@
 class Bill < ApplicationRecord
-  belongs_to :client
+  belongs_to :user
+  Has_many :items
 end
