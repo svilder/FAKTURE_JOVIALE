@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_21_161435) do
+ActiveRecord::Schema.define(version: 2019_12_22_133504) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 2019_11_21_161435) do
     t.integer "swift"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_bank_accounts_on_user_id"
   end
 
   create_table "bills", force: :cascade do |t|
@@ -30,7 +32,12 @@ ActiveRecord::Schema.define(version: 2019_11_21_161435) do
     t.bigint "client_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "validated"
+    t.boolean "paid"
+    t.boolean "sent"
+    t.bigint "user_id", null: false
     t.index ["client_id"], name: "index_bills_on_client_id"
+    t.index ["user_id"], name: "index_bills_on_user_id"
   end
 
   create_table "clients", force: :cascade do |t|
@@ -38,16 +45,16 @@ ActiveRecord::Schema.define(version: 2019_11_21_161435) do
     t.string "last_name"
     t.string "email"
     t.string "phone"
-    t.bigint "company_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["company_id"], name: "index_clients_on_company_id"
+    t.bigint "companie_id", null: false
+    t.index ["companie_id"], name: "index_clients_on_companie_id"
   end
 
   create_table "companies", force: :cascade do |t|
     t.string "name"
-    t.string "address_line_1"
-    t.string "address_line_2"
+    t.string "adress_line_1"
+    t.string "adress_line_2"
     t.string "postal_code"
     t.string "city"
     t.string "country"
@@ -62,6 +69,10 @@ ActiveRecord::Schema.define(version: 2019_11_21_161435) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.bigint "bill_id", null: false
+    t.index ["bill_id"], name: "index_items_on_bill_id"
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -86,5 +97,10 @@ ActiveRecord::Schema.define(version: 2019_11_21_161435) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bank_accounts", "users"
   add_foreign_key "bills", "clients"
+  add_foreign_key "bills", "users"
+  add_foreign_key "clients", "companies", column: "companie_id"
+  add_foreign_key "items", "bills"
+  add_foreign_key "items", "users"
 end
