@@ -13,7 +13,12 @@ Companie.destroy_all
 Item.destroy_all
 BankAccount.destroy_all
 
+# en console :
+
 user = User.new(email:"yo@yo.com", password:"yoyoyo")
 companie = Companie.new(name:"Ubisoft", city:"Montreal")
 client = Client.new(first_name:"Bob", last_name:"Poop", email:"bob@poop.com", companie_id:1)
 bill = Bill.new(title:"Facture Wagon automne", validated:false, paid:false, sent:false, user_id:1, client_id:1)
+item = Item.new(description:"Journée TA", quantity:5, price:100, user_id:1, bill_id:1)
+bank_account = BankAccount.new(description:"Compte la Poste", user_id:1)
+
